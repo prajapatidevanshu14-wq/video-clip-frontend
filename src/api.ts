@@ -3,8 +3,7 @@ import type { Clip, AppError } from "./types";
 // ─── CONFIGURE YOUR BACKEND URL HERE ──────────────────────────────────────────
 // Replace this with your actual backend URL before deploying.
 // Example: "https://api.myapp.com" or "http://localhost:8000"
-const BACKEND_URL =
-  (import.meta.env.VITE_BACKEND_URL as string) || "https://YOUR_BACKEND_URL";
+const BACKEND_URL = "https://video-backend-mjx4.onrender.com";
 
 export const API_ENDPOINT = `${BACKEND_URL}/process-video`;
 
@@ -43,7 +42,7 @@ export async function processVideo(
   if ("youtubeUrl" in input) {
     formData.append("youtube_url", input.youtubeUrl);
   } else {
-    formData.append("video", input.file, input.file.name);
+    formData.append("file", input.file);
   }
 
   onProgress("uploading");
