@@ -47,6 +47,8 @@ export async function processVideo(
 
   onProgress("uploading");
 
+  console.log("Sending file:", input.file)
+
   let response: Response;
 
   try {
