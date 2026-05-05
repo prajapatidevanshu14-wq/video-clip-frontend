@@ -200,7 +200,7 @@ async function processVideoWithUrl(
   if ("youtubeUrl" in input) {
     formData.append("youtube_url", input.youtubeUrl);
   } else {
-    formData.append("video", input.file, input.file.name);
+    formData.append("file", input.file);
   }
 
   onProgress("uploading");
